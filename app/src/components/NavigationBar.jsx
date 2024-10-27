@@ -8,7 +8,7 @@ function NavigationBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       if (currentScrollPos > lastScrollPos) {
         setShowNav(false); // Hide on scroll down
       } else {
@@ -30,9 +30,8 @@ function NavigationBar() {
       <div className="navbar-logo">MyLogo</div>
       <div className={`navbar-links ${isMobileMenuOpen ? "navbar-links-open" : ""}`}>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="#about">Articles</a>
         <a href="#services">Login</a>
-        <a href="#contact">Contact</a>
       </div>
       <button className="navbar-toggle" onClick={toggleMobileMenu}>
         ☰
