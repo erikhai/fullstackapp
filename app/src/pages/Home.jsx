@@ -1,15 +1,51 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/register'); 
+    };
+
+    const scrolling = () =>{
+        const element = document.getElementById('home-showcase-features');
+        console.log("Element is", element)
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY; // Get the position relative to the document
+        const offsetPosition = elementPosition - 60; // Adjust this value (80 pixels in this case)
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+        
+    }
+
     return (
         <div>
             <div className="padding"/>
             <div className="home-banner">
-                Financing made easy
-                Ever wanted a visual representation of your spending? Look no futher, here at [idk] we provide insights into your money management
-                <button>Sign Up</button> <button>View Services (links to showcase)</button>
+
+                <div className="home-banner-title"><h1>FINANCING MANAGEMENT AT YOUR FINGERTIPS</h1></div>
+                <div className="home-banner-text">
+                    <h2>Ever wanted a visual representation of your spending? Look no futher, here at [idk] we provide insights into your money management</h2>
+                    <br/>
+                    <Stack spacing={2} direction="row">
+                        <Button variant="contained" size = "small" onClick={handleClick}>Sign Up</Button>
+                        <Button variant="contained" size = "small" onClick={scrolling}>View Services</Button>
+                    </Stack>
+                </div>
             </div>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
             <div className="home-about">
                 <div className="home-about-right">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique felis velit, sit amet sollicitudin dolor condimentum vitae. Duis commodo ligula non diam molestie finibus. Nunc vitae viverra nibh. Etiam iaculis mauris dapibus dolor pharetra, in sagittis neque accumsan. Sed finibus in turpis non dignissim. Donec facilisis ornare tellus, eget finibus dolor vestibulum nec. Ut varius massa eu mi lobortis, id luctus urna ullamcorper.
@@ -26,12 +62,22 @@ Praesent maximus eget augue quis ultrices. Aenean rhoncus vulputate augue, ac ma
                     Some picture
                 </div>
             </div>
-            <div className="home-showcase-features">
+            <div id="home-showcase-features" className="home-showcase-features">
                 <h1>What we offer</h1>
                 dynamic auto meoving scroll thing
             </div>
                 
-            
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <p >
             Home page needs a navbar that is catered for all devices (done)
             Home page needs some dynamic something(three.js)
